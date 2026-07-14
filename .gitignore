@@ -1,0 +1,123 @@
+# ==============================================================================
+# 1. ARCHIVOS DE AUDIO Y MULTIMEDIA (Muy importante para tu Separador de Audio)
+# ==============================================================================
+# Evita subir archivos pesados mp3, wav o stems generados localmente
+*.mp3
+*.wav
+*.flac
+*.ogg
+*.aac
+# Si creas una carpeta local para guardar las pistas de audio de prueba (ej: uploads/ o stems/)
+/uploads/
+/stems/
+/media/
+/storage/
+
+# ==============================================================================
+# 2. JAVA / MAVEN (Spring Boot)
+# ==============================================================================
+target/
+!.mvn/wrapper/maven-wrapper.jar
+!**/src/main/**/target/
+!**/src/test/**/target/
+
+# Archivos de logs de la aplicación Spring Boot
+*.log
+logs/
+
+# Archivos de configuración locales que puedan contener contraseñas o tokens (S3, DB, etc.)
+# Si usas perfiles de Spring, es buena práctica no subir el de desarrollo/local directo con credenciales reales
+**/src/main/resources/application-local.properties
+**/src/main/resources/application-local.yml
+**/src/main/resources/application-dev.properties
+**/src/main/resources/application-dev.yml
+
+# ==============================================================================
+# 3. PYTHON (Para tu futuro Worker de IA - Demucs / Spleeter)
+# ==============================================================================
+# Entornos virtuales
+venv/
+.venv/
+env/
+.env/
+ENV/
+bin/
+lib/
+include/
+
+# Caché de Python y compilados
+__pycache__/
+*.py[cod]
+*$py.class
+.pytest_cache/
+.mypy_cache/
+
+# Modelos descargados de IA (Demucs suele descargar sus checkpoints a una ruta local)
+.cache/
+models/
+checkpoint/
+*.ckpt
+*.pth
+*.onnx
+
+# ==============================================================================
+# 4. DOCKER & BASE DE DATOS
+# ==============================================================================
+# Evita subir los datos de la base de datos si creas un bind-mount local en vez de un volumen nombrado
+postgres_data/
+pgdata/
+
+# Archivos de entorno con credenciales secretas
+.env
+.env.local
+.env.*.local
+
+# ==============================================================================
+# 5. IDEs (IntelliJ IDEA, VS Code, Eclipse, NetBeans)
+# ==============================================================================
+### IntelliJ IDEA ###
+.idea/
+*.iws
+*.iml
+*.ipr
+out/
+!**/src/main/**/out/
+!**/src/test/**/out/
+
+### VS Code ###
+.vscode/
+!.vscode/extensions.json
+
+### Eclipse ###
+.apt_generated
+.classpath
+.factorypath
+.project
+.settings
+.springBeans
+.sts4-cache
+
+### NetBeans ###
+/nbproject/private/
+/nbbuild/
+/dist/
+/nbdist/
+/.nb-gradle/
+build/
+!**/src/main/**/build/
+!**/src/test/**/build/
+
+# ==============================================================================
+# 6. SISTEMA OPERATIVO
+# ==============================================================================
+### Mac OS ###
+.DS_Store
+.AppleDouble
+.LSOverride
+Icon
+
+
+### Windows ###
+Thumbs.db
+ehthumbs.db
+Desktop.ini
