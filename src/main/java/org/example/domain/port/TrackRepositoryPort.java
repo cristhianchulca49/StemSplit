@@ -2,11 +2,12 @@ package org.example.domain.port;
 
 import org.example.domain.model.Track;
 
+import java.util.Optional;
 import java.util.UUID;
 
 public interface TrackRepositoryPort {
 
     Track save(Track track);
 
-    Track findById(UUID id);
+    Optional<Track> findById(UUID id);
 }

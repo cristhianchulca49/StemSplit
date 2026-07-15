@@ -15,6 +15,10 @@ public class Track {
         this.status = status;
     }
 
+    public static Track reconstitute(UUID id, FileName fileName, FilePath filePath, Status status) {
+        return new Track(id, fileName, filePath, status);
+    }
+
     public UUID getId() {
         return id;
     }
