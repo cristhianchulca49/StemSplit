@@ -1,4 +1,4 @@
-package org.example.domain.port;
+package org.example.domain.ports.out;
 
 import org.example.domain.model.Track;
 

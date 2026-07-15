@@ -2,7 +2,7 @@ package org.example.infrastructure.persistence;
 
 import lombok.RequiredArgsConstructor;
 import org.example.domain.model.Track;
-import org.example.domain.port.TrackRepositoryPort;
+import org.example.domain.ports.out.TrackRepositoryPort;
 import org.springframework.stereotype.Repository;
 
 import java.util.Optional;
