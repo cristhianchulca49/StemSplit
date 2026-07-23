@@ -43,7 +43,7 @@ public class PostgresTrackRepositoryAdapterTest {
             Track trackInput =  mock(Track.class);
             TrackEntity trackEntity = TrackEntity.builder().build();
             TrackEntity savedEntity = TrackEntity.builder().build();
-            Track savedTrack = Track.reconstitute(UUID.randomUUID(), FileName.of("test.mp3"), FilePath.reconstitute("/path/to/test.mp3"), Status.PENDING);
+            Track savedTrack = Track.reconstitute(UUID.randomUUID(), FileName.of("test.mp3"), FilePath.of("/path/to/test.mp3"), Status.PENDING);
 
             when(trackPersistenceMapper.toEntity(trackInput)).thenReturn(trackEntity);
             when(trackJpaRepository.save(trackEntity)).thenReturn(savedEntity);
@@ -71,15 +71,15 @@ public class PostgresTrackRepositoryAdapterTest {
             Track trackInput = Track.reconstitute(UUID.randomUUID(), FileName.of("test.mp3"), FilePath.reconstitute("/path/to/test.mp3"), Status.PENDING);
             TrackEntity trackEntity = TrackEntity.builder().build();
 
-            when(trackJpaRepository.findById(trackInput.getId())).thenReturn(Optional.of(trackEntity));
+            when(trackJpaRepository.findById(trackInput.getTrackId())).thenReturn(Optional.of(trackEntity));
             when(trackPersistenceMapper.toDomain(trackEntity)).thenReturn(trackInput);
 
-            Optional<Track> result = postgresTrackRepositoryAdapter.findById(trackInput.getId());
+            Optional<Track> result = postgresTrackRepositoryAdapter.findById(trackInput.getTrackId());
 
             assertNotNull(result);
             assertEquals(trackInput, result.get());
 
-            verify(trackJpaRepository).findById(trackInput.getId());
+            verify(trackJpaRepository).findById(trackInput.getTrackId());
             verify(trackPersistenceMapper).toDomain(trackEntity);
 
         }

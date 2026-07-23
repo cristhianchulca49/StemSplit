@@ -38,7 +38,7 @@ public class LocalFileStorageAdapterTest {
         FilePath filePath = adapter.save(inputStream, trackId);
 
         assertNotNull(filePath);
-        assertEquals(tempDirectory.resolve(trackId.toString()).toString(), filePath.filePath());
+        assertEquals(tempDirectory.resolve(trackId.toString()).toString(), filePath.value());
 
         Path expectedPath = tempDirectory.resolve(trackId.toString());
         assertTrue(Files.exists(expectedPath));

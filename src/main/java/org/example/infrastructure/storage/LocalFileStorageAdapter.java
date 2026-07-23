@@ -45,7 +45,7 @@ public class LocalFileStorageAdapter implements FileStoragePort{
     @Override
     public InputStream find(FilePath filePath) {
         try{
-            return Files.newInputStream(Path.of(filePath.filePath()));
+            return Files.newInputStream(Path.of(filePath.value()));
         }catch (Exception e){
             throw new RuntimeException("Failed to read file" + e.getMessage(), e);
         }
@@ -54,7 +54,7 @@ public class LocalFileStorageAdapter implements FileStoragePort{
     @Override
     public void delete(FilePath filePath) {
         try {
-            Files.deleteIfExists(Path.of(filePath.filePath()));
+            Files.deleteIfExists(Path.of(filePath.value()));
         } catch (Exception e) {
             throw new RuntimeException("Failed to delete file" + e.getMessage(), e);
         }

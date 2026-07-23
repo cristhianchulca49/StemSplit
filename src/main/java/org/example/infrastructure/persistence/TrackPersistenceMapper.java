@@ -10,16 +10,16 @@ public class TrackPersistenceMapper {
 
     public TrackEntity toEntity(Track track) {
         return TrackEntity.builder()
-                .id(track.getId())
-                .fileName(track.getFileName().fileName())
-                .filePath(track.getFilePath().filePath())
+                .trackId(track.getTrackId())
+                .fileName(track.getFileName().value())
+                .filePath(track.getFilePath().value())
                 .status(track.getStatus())
                 .build();
     }
 
     public Track toDomain(TrackEntity trackEntity) {
         return Track.reconstitute(
-                trackEntity.getId(),
+                trackEntity.getTrackId(),
                 FileName.of(trackEntity.getFileName()),
                 FilePath.reconstitute(trackEntity.getFilePath()),
                 trackEntity.getStatus()

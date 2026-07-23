@@ -47,6 +47,6 @@ public class TrackControllerTest {
         mock.perform(multipart("/api/v1/tracks")
                         .file(mockSong))
                 .andExpect(status().isCreated())
-                .andExpect(jsonPath("$.fileName.fileName").value(fileName));
+                .andExpect(jsonPath("$.fileName.value").value(fileName));
     }
 }
