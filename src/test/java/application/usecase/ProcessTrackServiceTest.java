@@ -50,9 +50,9 @@ public class ProcessTrackServiceTest {
 
       Track trackCreated = service.execute(song, fileName);
 
-      assertNotNull(trackCreated.getId());
-      assertEquals(expectedId, trackCreated.getId());
-      assertEquals(fileName, trackCreated.getFileName().fileName());
+      assertNotNull(trackCreated.getTrackId());
+      assertEquals(expectedId, trackCreated.getTrackId());
+      assertEquals("Song1", trackCreated.getFileName().value());
       assertEquals(Status.PENDING, trackCreated.getStatus());
 
   }

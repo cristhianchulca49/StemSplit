@@ -15,7 +15,7 @@ import java.util.UUID;
 public class TrackEntity {
         @Id
         @Column(name = "id", nullable = false, updatable = false, unique = true)
-        private UUID id;
+        private UUID trackId;
 
         @Column(name = "file_name", length = 255, updatable = false)
         private String fileName;

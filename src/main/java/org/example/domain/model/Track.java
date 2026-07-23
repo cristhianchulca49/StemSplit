@@ -3,13 +3,13 @@ package org.example.domain.model;
 import java.util.UUID;
 
 public class Track {
-    private final UUID id;
+    private final UUID trackId;
     private final FileName fileName;
     private final FilePath filePath;
     private final Status status;
 
-    private Track(UUID id, FileName fileName, FilePath filePath, Status status) {
-        this.id = id;
+    private Track(UUID trackId, FileName fileName, FilePath filePath, Status status) {
+        this.trackId = trackId;
         this.fileName = fileName;
         this.filePath = filePath;
         this.status = status;
@@ -28,8 +28,8 @@ public class Track {
         return new Track(id, fileName, filePath, status);
     }
 
-    public UUID getId() {
-        return id;
+    public UUID getTrackId() {
+        return trackId;
     }
 
     public FileName getFileName() {
