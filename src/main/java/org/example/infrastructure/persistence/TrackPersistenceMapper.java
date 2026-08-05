@@ -22,7 +22,8 @@ public class TrackPersistenceMapper {
                 trackEntity.getTrackId(),
                 FileName.of(trackEntity.getFileName()),
                 FilePath.reconstitute(trackEntity.getFilePath()),
-                trackEntity.getStatus()
+                trackEntity.getStatus(),
+                trackEntity.getStems()
         );
     }
 }
