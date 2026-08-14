@@ -8,21 +8,21 @@ import java.util.UUID;
 
 @Entity
 @Getter
+@Setter(AccessLevel.PACKAGE)
 @Builder
 @AllArgsConstructor(access = AccessLevel.PRIVATE)
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 public class StemEntity {
 
     @Id
-    @Column(name = "id")
-    @OneToMany()
-    private UUID steamId;
+    @Column(name = "stem_id")
+    private UUID stemId;
 
-    @Column(name = "stem_type", nullable = false)
+    @Column(name = "stem_stype", nullable = false)
     @Enumerated(EnumType.STRING)
     private StemType stemType;
 
-    @Column(name =  "stem_path", nullable = false)
+    @Column(name = "stem_path", nullable = false)
     private String stemPath;
 
     @ManyToOne(fetch = FetchType.LAZY)

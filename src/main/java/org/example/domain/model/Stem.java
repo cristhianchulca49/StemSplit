@@ -15,4 +15,12 @@ public record Stem(
                 filePath
         );
     }
+
+    public static Stem reconstitute(UUID stemId, StemType stemType, FilePath filePath) {
+        return new Stem(
+                stemId,
+                stemType,
+                filePath
+        );
+    }
 }
